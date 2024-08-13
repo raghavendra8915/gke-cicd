@@ -7,12 +7,12 @@ metadata:
 description: cicd delivery pipeline
 serialPipeline:
   stages:
-  - targetId: gke-demo-target-1
+  - targetId: cluster-1
     # profiles:
     # - dev
   # - targetId: staging
   #   profiles:
   #   - staging
-  - targetId: gke-demo-target-2
+  - targetId: gke-demo
   #   profiles:
   #   - prod
