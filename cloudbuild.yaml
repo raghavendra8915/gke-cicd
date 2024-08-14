@@ -1,5 +1,23 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
+  args: 
+  - 'build'
+  - '--build-arg'
+  - 'SONARQUBE_SCANNER_CLI_VERSION=4.6.0.2311'
+  - '-t'
+  - 'gcr.io/noble-nation-424007-b0/sonar-scanner:latest'
+  - '-t'
+  - 'gcr.io/noble-nation-424007-b0/sonar-scanner:4.6.0.2311'
+  - '.'
+
+images: 
+- 'gcr.io/noble-nation-424007-b0/sonar-scanner:latest'
+- 'gcr.io/noble-nation-424007-b0/sonar-scanner:4.6.0.2311'
+
+tags: ['cloud-builders-community']
+
+steps:
+- name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'us-central1-docker.pkg.dev/noble-nation-424007-b0/gke-demo/quickstart-image', './app1' ]
   id: 'Build Docker Image'
 
