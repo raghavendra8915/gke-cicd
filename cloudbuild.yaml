@@ -1,25 +1,25 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/noble-nation-424007-b0/gke-demo/quickstart-image', './app1' ]
+  args: ['build', '-t', 'northamerica-northeast1-docker.pkg.dev/noble-nation-424007-b0/my-app-test', './app1' ]
   id: 'Build Docker Image'
 
   # images:
   # - 'us-central1-docker.pkg.dev/<your_project_id>/gke-repo/quickstart-image'
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/noble-nation-424007-b0/gke-demo/quickstart-image' ]
+  args: ['push', 'northamerica-northeast1-docker.pkg.dev/noble-nation-424007-b0/my-app-test' ]
   id: 'Push Docker Image'
 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/noble-nation-424007-b0/gke-demo/flask-image', './app2' ]
-  id: 'Build Docker Image2'
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['build', '-t', 'us-central1-docker.pkg.dev/noble-nation-424007-b0/gke-demo/flask-image', './app2' ]
+#  id: 'Build Docker Image2'
 
   # images:
   # - 'us-central1-docker.pkg.dev/<your_project_id>/gke-repo/quickstart-image'
 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/noble-nation-424007-b0/gke-demo/flask-image' ]
-  id: 'Push Docker Image2'
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['push', 'us-central1-docker.pkg.dev/noble-nation-424007-b0/gke-demo/flask-image' ]
+#  id: 'Push Docker Image2'
 
 
 - name: 'google/cloud-sdk:latest'
